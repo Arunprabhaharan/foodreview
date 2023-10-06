@@ -1,0 +1,22 @@
+<html>
+<body>
+<html><marquee behavior="scroll" direction="right" scrollamount="16"><h3><font face=ALGERIAN COLOR="LITEBLACK"> ITS MY PLEASURE FOR WAITING TO SERVE  YOU</font></h3>
+    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/0845c232253239.56766f2d063c9.gif"></marquee>
+<center><p><h1><font face=ALGEMAN> WELCOME TO MY HOTEL</font></h1></p></center>
+<div style="display: flex; justify-content: center;">
+  <form action="/register" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Register" style="background-color: goldenrod; color: #fff; border: none; padding: 5px 10px; border-radius: 5px;">
+  </form>
+
+    <form action="/logins" method="POST" style="margin-right: 10px;">
+      {% csrf_token %}
+      &nbsp;&nbsp;<input type="submit" value="Login" style="background-color: greenyellow; color: #333; border: none; padding: 5px 10px; border-radius: 8px;">
+    </form>
+    
+    <form action="/admin">
+       <input type="submit" value="Admin" style="background-color: goldenrod; color: #fff; border: none; padding: 5px 10px; border-radius: 5px;">
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html><head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        </style>
+        </head>
+    <center><h1>Menu</h1>
+    <body background ="https://img.freepik.com/free-photo/healthy-lunch-go-packed-lunch-box_1220-4541.jpg?w=1380&t=st=1688980424~exp=1688981024~hmac=6c996a2522afa8ac5e28dfcf40857627dd22fe6b5f216db50826c895ad0e09ed"></body>
+    <form method="POST" action="/hotel_rating">
+      {% csrf_token %}
+      <div class="form-group">
+          <label> HOTEL RATINGS </label>
+          <input type="text" name="hotel_rating" class="form-control" style="width:30%" placeholder="i.e..1,2,3,4,5"><BR><BR>
+          <button type="submit" class="btn btn-primary">submit</button>
+      </div>
+  </form>
+    <table>
+    <tr><th>Items</th>
+    <th>Rate</th></tr>
+    {% for i in menus %}
+    <tr><td><a href="/Review?item={{ i.Items }}">{{i.Items}}</a></td>
+    <td>{{i.rate}}</td></tr>
+    {% endfor %}
+</table>
+<p>{{msg}}</p> </center>  
+<center> <a href="/mains"><input type= button value=Back ></a></center> 
+</html>

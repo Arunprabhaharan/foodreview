@@ -1,0 +1,130 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"/>
+</head>
+<body >
+<center><h1><font color= "blue" face ="algeman"> Its our pleasure to get your report to give our best  </font></h1></center>
+
+
+
+<center> <label> Enter your reviews about this item </label> </center><br>
+
+<center> <button  id="execellent" style="background-color:transparent;font-size: x-large;" class="btn">Execellent<br><i span="icon" style="color:rgb(203, 46, 14)" class="bi bi-emoji-heart-eyes-fill"></i></button>
+    <button   id="verygood" style="background-color:transparent;font-size: x-large;" class="btn">Very good<br><i span="icon" style="color:rgb(178, 14, 203)" class="bi bi-emoji-sunglasses-fill"></i></button>
+        <button   id="good" style="background-color:transparent;font-size: x-large;" class="btn">Good<br><i span="icon" style="color:blue" class="bi bi-emoji-smile-fill"></i></button>
+        <button  id="average" style="background-color:transparent;font-size: x-large;" class="btn">Average<br><i span="icon" style="color:lightgreen" class="bi bi-emoji-smile-upside-down-fill"></i></button>
+        <button id="bad" style="background-color:transparent;font-size: x-large;" class="btn">Sad<br><i span="icon" style="color:rgb(203, 14, 27)" class="bi bi-emoji-frown-fill"></i></button>    
+    <p>{{msg}}</p>
+    </center>
+    <div id="fruit">
+        </div>
+        
+
+{{msgs}}
+{% for i in rv %}
+<p>name: {{i.User_name}}</p>
+
+<p> reviews<br> {{i.Items_review}}</p>
+<p>ratings <br>{{i.Items_ratings}}</p>
+{% endfor %}
+<center><a href="/menus"> <button type="button" class="btn btn-danger"> go to menu </button></a></center><br><br>
+<center><a href="/logouts"> <button type="button" class="btn btn-dark"> logout </button></a></center>
+<script>
+    $(document).ready(function(){
+        $('#execellent').click(function(){
+        var review=($(this).attr('id'));
+        $.ajax({
+            url : '/check',
+            type : 'POST',
+            data : JSON.stringify({
+                card_id: review,
+            }),
+            success:function(response){
+                $('#fruit').html(response);
+            }
+        });
+    });
+
+
+    $('#verygood').click(function(){
+        var review=($(this).attr('id'));
+        $.ajax({
+            url : '/check',
+            type : 'POST',
+            data : JSON.stringify({
+                card_id: review,
+            }),
+            success:function(response){
+                $('#fruit').html(response);
+            }
+            
+        });
+    });
+
+
+
+
+    $('#good').click(function(){
+        var review=($(this).attr('id'));
+        $.ajax({
+            url : '/check',
+            type : 'POST',
+            data : JSON.stringify({
+                card_id: review,
+            }),
+            success : function(response){
+            $('#fruit').html(response);
+            }
+        });
+    });
+
+
+
+    $('#average').click(function(){
+        var review=($(this).attr('id'));
+        $.ajax({
+            url : '/check',
+            type : 'POST',
+            data : JSON.stringify({
+                card_id: review,
+            }),
+            success:function(response){
+                $('#fruit').html(response);
+            }
+            
+        });
+    });
+
+
+
+
+    $('#bad').click(function(){
+        var review=($(this).attr('id'));
+        $.ajax({
+            url : '/check',
+            type : 'POST',
+            data : JSON.stringify({
+                card_id: review,
+            }),
+            success : function(response){
+            $('#fruit').html(response);
+            }
+        });
+    });
+
+
+
+    });
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

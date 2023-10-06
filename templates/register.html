@@ -1,0 +1,31 @@
+<html>
+<head> <center><h1><font face="segoeprint" font color= "thickgreen">Registration Form</font></h1></center></head>
+<body background="https://img.freepik.com/free-photo/green-plant-wooden-background_1340-25470.jpg?t=st=1688980706~exp=1688984306~hmac=c7074eadbb54b3ee450d19f4599e881c3e9f3c661f7611fb169637176a7a9f53&w=1380"></body>
+<form action="/regvalidation" method="POST">
+    {% csrf_token %}
+<table align=center>
+<tr>
+<td><font color="yellow">Enter username:</font></td> 
+<td><input type= text  name= username></td>
+</tr><br>
+<tr>
+<td><font color="yellow">Enter emailid:</font></td> 
+<td><input type= text  name= email></td>
+</tr><br>
+<tr>
+<td><font color="yellow">Enter password:</font></td> 
+<td><input type= password  name= password ></td>
+</tr>
+<tr><br>
+
+<td><center><input type= Reset value=clear> </center></td>
+<td><center><input type= submit value=Register> </center></td>
+</tr>
+<center><p>{{msg}}</p></center>
+</table>
+</form>
+&nbsp&nbsp&nbsp<center><form action="/home" method="POST">
+    {% csrf_token %} 
+ <input type= submit value=exit >
+</form>
+</center></body></html>

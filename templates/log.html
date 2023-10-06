@@ -1,0 +1,29 @@
+<html>
+<head> <center><h1><font face="segoeprint" font color= "green">LOG IN PAGE</h1></center></head>
+
+
+<body background= "https://img.freepik.com/free-photo/top-view-green-different-leaves-isolated-black-surface_141793-14549.jpg?w=1060&t=st=1688980755~exp=1688981355~hmac=ddb039d3cbf04bb080f8280db8a55bf58f617524d0672c70c6c6860135d3b10a">
+<form action="/logvalidation" method="POST">
+    {% csrf_token %}
+<table align=center>
+<tr>
+<td><font color="yellow">Email:</font></td> 
+<td><input type= text  name= email></td>
+</tr><br>
+<tr>
+<td><font color="yellow">Password:</font></td> 
+<td><input type= password  name= password ></td>
+</tr>
+<tr><br>
+<td><input type= submit value=login></td>
+<td><input type= Reset value=clear> </td>
+<center><p> {{msg}}</p> </center>
+</tr>
+</table>
+</form>
+<center><form action="/home" method="POST">
+    {% csrf_token %} 
+ <input type= submit value=exit >
+</form></center></body></html>
+
+

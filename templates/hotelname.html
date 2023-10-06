@@ -1,0 +1,44 @@
+<html>
+    <head>
+        {% load static %}
+      
+        </head>
+
+    <body>
+
+    <center>
+        <form>
+            <table>
+                <tr>
+                    <td>SELECT HOTEL NAME:</td> 
+                    <td><select name="hotelname" id="htl">
+                        {% for j in hotel_name %}
+                         <option>{{j.hotel_name}}</option>
+                        {% endfor %}
+                    </select><br></td>
+                    </tr>
+            </table>
+        </form></center>
+        <center><button  class="btn btn-primary"  id="sub"> click </button></center>
+            <div id="d1"> </div>
+        <script>
+            $(document).ready(function(){
+    $('#sub').click(function(){
+
+var hotel_name=$('#htl').val()
+        $.ajax({
+            url:'/viewss',
+            type:'POST',
+    data:JSON.stringify({
+    
+    h:hotel_name,
+    }),
+            success:function(response){
+                $('#d1').html(response);
+            }
+        });
+    });
+});
+        </script>
+    </body>
+</html>

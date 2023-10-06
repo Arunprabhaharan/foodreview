@@ -1,0 +1,18 @@
+<html>
+    <body>
+        {% if msg %}
+        <p> your reviews uploaded succesffully</p>
+        {% elif bad %}
+        <form action="/sad_review" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+            <center><label>Enter your Review</label><input type="text" class="form-control" name="review" style="width:10%" placeholder="i.e..abcdef.."></center>
+        <BR><center><label>Enter your Ratings</label><input type="text" class="form-control" name="rating" style="width:10%" placeholder="i.e..1,2,3..">
+            <button type="submit" class="btn btn-dark">
+    submit </button></center>
+        </div>
+        </form>
+        {% endif %}
+        
+        </body>
+</html>

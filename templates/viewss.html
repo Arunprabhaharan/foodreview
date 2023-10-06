@@ -1,0 +1,40 @@
+<html>   
+    <head>
+        {% load static %}
+    <style>
+        img{
+            height: 25%;
+            width: 25%;
+        }
+    </style>
+    </head>
+<center><body>
+    
+    <p>HOTEL NAME:{{hotel_name}}<br>HOTEL LOC:{{hotel_location}}<br>HOTEL EMAIL:{{hotel_email}}<br></p>  
+   
+    
+    {% if thumbnails == 'ptr' %}
+        <img src="{% static '/images/ptr.jpg' %}"><br>
+    {% elif thumbnails == 'thangam' %}
+    <img src="{% static '/images/htl thangam.jpg' %}"><br>
+    {% elif thumbnails == 'ptr1' %}
+    <img src="{% static '/images/htl pttr.jpg' %}"><br>
+    {% elif thumbnails == 'saravana' %}
+    <img src="{% static '/images/htl saravan.jpg' %}"><br>
+    {% elif thumbnails == 'anatha' %}
+    <img src="{% static '/images/ananth.jpg' %}"><br>
+    {% elif thumbnails == 'konaar' %}
+    <img src="{% static '/images/htl koonar kadai.jpg' %}"><br>
+    {% elif thumbnails == 'konaar1' %}
+    <img src="{% static '/images/htl koonar.jpg' %}"><br>
+    {% elif thumbnails == 'premam' %}
+    <img src="{% static '/images/htl prema vilash.jpg' %}"><br>
+    {% elif thumbnails == 'ramu' %}
+    <img src="{% static '/images/htl rama vilash.jpg' %}"><br>
+    {% endif %}
+
+    <a href ="/menus" >menu</a>
+    
+    
+    
+</body></center>
